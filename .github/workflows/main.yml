@@ -39,6 +39,6 @@ jobs:
           java-version: '17'
       - name: Construyendo y probando el código
         run: |
-          chmod +x gradle       
+          chmod +rwx gradle       
           gradle publish
           echo juaverbla
