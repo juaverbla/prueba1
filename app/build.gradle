@@ -44,7 +44,7 @@ publishing {
         
             groupId = 'prueba1'
             artifactId = 'p1'
-            version = '0.0'
+            version = '1.0'
 
             from components.java
         }
