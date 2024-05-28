@@ -26,9 +26,9 @@ jobs:
     runs-on: ubuntu-latest
     needs: Build
     env:
-      GITHUB_LOGIN: juaverbla
-      GITHUB_PACKAGES: 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
-      GITHUB_OAUTH: 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
+      GITHUB_LOGIN: ${{ github.actor }}
+      GITHUB_PACKAGES: ${{ secrets.GITHUB_TOKEN }}
+      GITHUB_OAUTH: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - name: Clonando el repositorio y estableciendo el espacio de trabajo
         uses: actions/checkout@v3
@@ -39,6 +39,6 @@ jobs:
           java-version: '17'
       - name: Construyendo y probando el código
         run: |
-          chmod +x gradlew        
-          ./gradlew publish
+          chmod +x gradle       
+          gradle publish
           echo juaverbla
